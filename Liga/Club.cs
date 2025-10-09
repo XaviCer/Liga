@@ -21,6 +21,10 @@ namespace Liga
         public Club() { }
 
         // Métodos
+        /// <summary>
+        /// Método que se encarga de añadir un equipo a la lista de equipos
+        /// </summary>
+        /// <param name="equipo"></param>
         public void Add(Equipo equipo)
         {
             equipos.Add(equipo);
