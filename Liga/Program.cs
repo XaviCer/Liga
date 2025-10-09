@@ -32,7 +32,9 @@ namespace Liga
                 switch (opcion)
                 {
                     case 1:
-                        CargaDatosIniciales();
+                        //CargaDatosIniciales();
+                        CargaInicJugadores();
+                        CargaInicJugadoras();
                         break;
                     default:
                         salir = true;
@@ -90,6 +92,36 @@ namespace Liga
             return eq;
         }
 
+        static Equipo[] CargaInicEquiposF()
+        {
+            Equipo[] eq = new Equipo[20];
+
+            // public Equipo(Equipo.Categoria categoria, String nombre)
+
+            eq[0] = new Equipo(Equipo.Categoria.femenino1, "Barça Femenino");
+            eq[1] = new Equipo(Equipo.Categoria.femenino1, "Real Madrid Femenino");
+            eq[2] = new Equipo(Equipo.Categoria.femenino1, "Atlético Madrid Femenino");
+            eq[3] = new Equipo(Equipo.Categoria.femenino1, "Levante Femenino");
+            eq[4] = new Equipo(Equipo.Categoria.femenino1, "Sevilla Femenino");
+            eq[5] = new Equipo(Equipo.Categoria.femenino1, "Valencia Femenino");
+            eq[6] = new Equipo(Equipo.Categoria.femenino1, "Real Sociedad Femenino");
+            eq[7] = new Equipo(Equipo.Categoria.femenino1, "Athletic Club Femenino");
+            eq[8] = new Equipo(Equipo.Categoria.femenino1, "Villarreal Femenino");
+            eq[9] = new Equipo(Equipo.Categoria.femenino1, "Betis Femenino");
+            eq[10] = new Equipo(Equipo.Categoria.femenino1, "Granada Femenino");
+            eq[11] = new Equipo(Equipo.Categoria.femenino1, "Celta Femenino");
+            eq[12] = new Equipo(Equipo.Categoria.femenino1, "Osasuna Femenino");
+            eq[13] = new Equipo(Equipo.Categoria.femenino1, "Alavés Femenino");
+            eq[14] = new Equipo(Equipo.Categoria.femenino1, "Levante Las Planas");
+            eq[15] = new Equipo(Equipo.Categoria.femenino1, "Madrid CFF");
+            eq[16] = new Equipo(Equipo.Categoria.femenino1, "Sporting Huelva");
+            eq[17] = new Equipo(Equipo.Categoria.femenino1, "Granadilla Tenerife");
+            eq[18] = new Equipo(Equipo.Categoria.femenino1, "Eibar Femenino");
+            eq[19] = new Equipo(Equipo.Categoria.femenino1, "Las Palmas Femenino");
+
+            return eq;
+        }
+
         static Jugador[] CargaInicJugadores()
         {
             Jugador[] jug = new Jugador[20];
@@ -116,6 +148,11 @@ namespace Liga
             jug[17] = new Jugador("Daniel", "Reyes", "Pascual", 'H', 22, 0);
             jug[18] = new Jugador("Óscar", "Lara", "Aguilar", 'H', 23, 0);
             jug[19] = new Jugador("Hugo", "Serrano", "Bravo", 'H', 20, 0);
+
+            for (int i = 0; i < 20; i++)
+                jug[i].Muestra();
+
+            Console.ReadKey();
 
             return jug;
         }
@@ -146,6 +183,12 @@ namespace Liga
             jug[17] = new Jugador("Beatriz", "Aguilar", "Sánchez", 'M', 24, 0);
             jug[18] = new Jugador("Julia", "Vázquez", "Molina", 'M', 19, 0);
             jug[19] = new Jugador("Silvia", "De la Cruz", "Ramírez", 'M', 21, 0);
+
+            for (int i = 0; i < 20; i++)
+                jug[i].Muestra();
+
+            Console.ReadKey();
+
 
             return jug;
         }

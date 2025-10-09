@@ -57,7 +57,7 @@ namespace Liga
         {
             //Mostramos en pantalla la ficha del jugador
             Console.WriteLine("### Datos del jugador ###");
-            Console.WriteLine();
+            Console.WriteLine("-------------------------");
 
             Console.WriteLine("Nombre: " + Nombre);
             Console.WriteLine("Apellido 1: " + Apellido1);
@@ -65,6 +65,7 @@ namespace Liga
             Console.WriteLine("Sexo: " + Sexo);
             Console.WriteLine("Edad: " + Edad);
             Console.WriteLine("Precio: " + Precio);
+            Console.WriteLine();
 
             Console.ReadKey();
         }
