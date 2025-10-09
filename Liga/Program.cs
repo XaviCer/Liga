@@ -8,9 +8,6 @@ namespace Liga
 {
     internal class Program
     {
-        static Equipo Equipo1 = new Equipo();
-        static Jugador Jugador = new Jugador();
-
         static void Main(string[] args)
         {
             GestionFutbol();
@@ -24,10 +21,10 @@ namespace Liga
             {
                 Console.WriteLine("Ejercicio Gestión club de fútbol");
                 Console.WriteLine("================================");
-                Console.WriteLine("1. Dar de alta un club");
-                Console.WriteLine("2. Dar de alta un equipo");
-                Console.WriteLine("3. Dar de alta un jugador");
-                Console.WriteLine("4. Meter el jugador en un equipo");
+                Console.WriteLine("1. Cargar datos iniciales");
+                Console.WriteLine("2. ");
+                Console.WriteLine("3. ");
+                Console.WriteLine("4. ");
 
                 Console.Write("Elige una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
@@ -35,16 +32,7 @@ namespace Liga
                 switch (opcion)
                 {
                     case 1:
-                        AltaClub();
-                        break;
-                    case 2:
-                        AltaEquipo();
-                        break;
-                    case 3:
-                        AltaJugador();
-                        break;
-                    case 4:
-                        MeterJugador();
+                        CargaDatosIniciales();
                         break;
                     default:
                         salir = true;
@@ -55,28 +43,23 @@ namespace Liga
             Console.ReadKey();
         }
 
-        static void AltaClub()
+        static void CargaDatosIniciales()
         {
+            Club club1 = new Club("F.C.Barcelona", 1890);
 
-        }
+            Equipo equipo1 = new Equipo(Equipo.Categoria.masculino1,"Primer equipo");
 
-        static void AltaEquipo()
-        {
-            Equipo1.NombreEquipo = "Manolo";
-        }
+            equipo1.AñadirJugador(new Jugador("Lamine", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Xavi", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Jordi", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Iban", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Julian", "bbbbb", "ccccc", 'h', 30, 1000));
 
-        static void AltaJugador()
-        {
-            Jugador.Alta();
-            Jugador.Muestra();
-        }
-
-        static void MeterJugador()
-        {
-            Equipo1.AñadirJugador(Equipo1, Jugador);
-            for (int i = 0; i < Equipo1.ListaJugadores.Count; i++)
+            Console.WriteLine("Club: " + club1.Nombre);
+            Console.WriteLine("Equipo: " + equipo1.NombreEquipo);
+            for (int i = 0; i < equipo1.ListaJugadores.Count; i++)
             {
-                Equipo1.ListaJugadores[i].Muestra();
+                equipo1.ListaJugadores[i].Muestra();
             }
         }
         static Equipo[] CargaInicEquipos()

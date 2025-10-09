@@ -18,7 +18,11 @@ namespace Liga
         public int AñoFundacion { get { return añoFundacion; } set { añoFundacion = value; } }
 
         //Constructores
-        public Club() { }
+        public Club(string nombre, int añoFundacion)
+        {
+            this.nombre = nombre;
+            this.añoFundacion = añoFundacion;
+        }
 
         // Métodos
         /// <summary>
