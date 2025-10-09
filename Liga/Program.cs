@@ -46,18 +46,14 @@ namespace Liga
         static void CargaDatosIniciales()
         {
             Club club1 = new Club("F.C.Barcelona", 1890);
-            Equipo equipo1 = new Equipo(Equipo.Categoria.masculino1,"Primer equipo");
-            Jugador jugador1 = new Jugador("Lamine", "bbbbb", "ccccc", 'h', 30, 1000);
-            Jugador jugador2 = new Jugador("Xavi", "bbbbb", "ccccc", 'h', 30, 1000);
-            Jugador jugador3 = new Jugador("Jordi", "bbbbb", "ccccc", 'h', 30, 1000);
-            Jugador jugador4 = new Jugador("Iban", "bbbbb", "ccccc", 'h', 30, 1000);
-            Jugador jugador5 = new Jugador("Julian", "bbbbb", "ccccc", 'h', 30, 1000);
 
-            equipo1.AñadirJugador(jugador1);
-            equipo1.AñadirJugador(jugador2);
-            equipo1.AñadirJugador(jugador3);
-            equipo1.AñadirJugador(jugador4);
-            equipo1.AñadirJugador(jugador5);
+            Equipo equipo1 = new Equipo(Equipo.Categoria.masculino1,"Primer equipo");
+
+            equipo1.AñadirJugador(new Jugador("Lamine", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Xavi", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Jordi", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Iban", "bbbbb", "ccccc", 'h', 30, 1000));
+            equipo1.AñadirJugador(new Jugador("Julian", "bbbbb", "ccccc", 'h', 30, 1000));
 
             Console.WriteLine("Club: " + club1.Nombre);
             Console.WriteLine("Equipo: " + equipo1.NombreEquipo);
