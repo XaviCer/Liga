@@ -46,16 +46,9 @@ namespace Liga
             return equipo;
         }
 
-        public Equipo AñadirJugador(Equipo equipo, Jugador jugador)
+        public void AñadirJugador(Jugador jugador)
         {
-
-            equipo.ListaJugadores.Add(jugador);
-            return equipo;
+            ListaJugadores.Add(jugador);
         }
-
-
-
     }
-
-    
 }
