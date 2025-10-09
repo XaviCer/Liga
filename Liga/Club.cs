@@ -11,6 +11,7 @@ namespace Liga
         // Atributos
         string nombre;
         int añoFundacion;
+        //List<Equipo> equipos = new List<Equipo>();
 
         // Propiedades
         public string Nombre { get { return nombre; } set { nombre = value; } }
@@ -20,6 +21,9 @@ namespace Liga
         public Club() { }
 
         // Métodos
-
+        //    public void Add(Equipo equipo)
+        //    {
+        //        equipos.Add(equipo);
+        //    }
     }
 }
