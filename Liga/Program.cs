@@ -13,7 +13,9 @@ namespace Liga
             //Creamos un jugador de prueba
 
             Jugador j1 = new Jugador();
-            j1.Relle
+            j1.Alta();
+
+            Console.ReadKey();
 
         }
     }

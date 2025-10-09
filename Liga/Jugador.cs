@@ -12,18 +12,21 @@ namespace Liga
         public string Apellido1 { get; set; }
         public string Apellido2 { get; set; }
 
+        public char Sexo { get; set; }
+
         public int Edad { get; set; }
-        public double Precio { get; set; }
+        public int Precio { get; set; }
 
         public Jugador()
         {
         }
 
-        public Jugador(string nombre, string apellido1, string apellido2, int edad, double precio)
+        public Jugador(string nombre, string apellido1, string apellido2, char sexo, int edad, int precio)
         {
             Nombre = nombre;
             Apellido1 = apellido1;
             Apellido2 = apellido2;
+            Sexo = sexo;
             Edad = edad;
             Precio = precio;
         }
@@ -33,21 +36,53 @@ namespace Liga
             Console.WriteLine("### Alta de un jugador ###");
             Console.WriteLine();
 
-            Console.WriteLine("Nombre: ");
+            Console.Write("Nombre: ");
             Nombre = Console.ReadLine();
-            Console.WriteLine("Apellido1: ");
+            Console.Write("Apellido1: ");
             Apellido1 = Console.ReadLine();
-            Console.WriteLine("Apellido2: ");
+            Console.Write("Apellido2: ");
             Apellido2 = Console.ReadLine();
 
-            //Console.WriteLine("Edad: ");
-            //Edad = Console.ReadLine();
+            Console.Write("Edad: ");
+            Edad = int.Parse(Console.ReadLine());
 
-            //Console.WriteLine("Sexo (H/M): ");
-            //Apellido1 = Console.ReadLine();
+            Console.Write("Sexo (H/M): ");
+            Sexo = char.Parse(Console.ReadLine());
+
+            Console.Write("Precio: ");
+            Precio = int.Parse(Console.ReadLine());
 
 
         }
+        public void Muestra()
+        {
+            Console.Clear();
+            Console.WriteLine("### Datos del jugador ###");
+            Console.WriteLine();
+
+            Console.WriteLine("Nombre: " + Nombre);
+
+
+
+            Nombre = Console.ReadLine();
+            Console.Write("Apellido1: ");
+            Apellido1 = Console.ReadLine();
+            Console.Write("Apellido2: ");
+            Apellido2 = Console.ReadLine();
+
+            Console.Write("Edad: ");
+            Edad = int.Parse(Console.ReadLine());
+
+            Console.Write("Sexo (H/M): ");
+            Sexo = char.Parse(Console.ReadLine());
+
+            Console.Write("Precio: ");
+            Precio = int.Parse(Console.ReadLine());
+
+
+        }
+
+
 
     }
 }
