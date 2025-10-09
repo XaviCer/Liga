@@ -10,6 +10,7 @@ namespace Liga
     {
         static void Main(string[] args)
         {
+            //empieza
         }
     }
 }
