@@ -15,6 +15,11 @@ namespace Liga
             Jugador j1 = new Jugador();
             j1.Alta();
 
+            Console.WriteLine();
+            Console.WriteLine("Datos del Jugador creado");
+
+            j1.Muestra();
+
             Console.ReadKey();
 
         }

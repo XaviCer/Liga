@@ -56,29 +56,20 @@ namespace Liga
         }
         public void Muestra()
         {
-            Console.Clear();
+       
             Console.WriteLine("### Datos del jugador ###");
             Console.WriteLine();
 
             Console.WriteLine("Nombre: " + Nombre);
+            Console.WriteLine("Apellido 1: " + Apellido1);
+            Console.WriteLine("Apellido 2: " + Apellido2);
+            Console.WriteLine("Sexo: " + Sexo);
+            Console.WriteLine("Edad: " + Edad);
+            Console.WriteLine("Precio: " + Precio);
 
+            Console.ReadKey();
 
-
-            Nombre = Console.ReadLine();
-            Console.Write("Apellido1: ");
-            Apellido1 = Console.ReadLine();
-            Console.Write("Apellido2: ");
-            Apellido2 = Console.ReadLine();
-
-            Console.Write("Edad: ");
-            Edad = int.Parse(Console.ReadLine());
-
-            Console.Write("Sexo (H/M): ");
-            Sexo = char.Parse(Console.ReadLine());
-
-            Console.Write("Precio: ");
-            Precio = int.Parse(Console.ReadLine());
-
+           
 
         }
 
