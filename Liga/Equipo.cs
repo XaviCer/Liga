@@ -19,17 +19,17 @@ namespace Liga
             femenino1
         };
          
-        public Categoria categoriaEquipo { get; set; }
+        public Categoria CategoriaEquipo { get; set; }
 
-        public string nombreEquipo { get; set; }
+        public string NombreEquipo { get; set; }
         public Equipo()
         {
         }
 
         public Equipo(Categoria categoriaequipo, string nombre)
         {
-            categoriaEquipo = categoriaequipo;  
-            nombreEquipo = nombre;
+            CategoriaEquipo = categoriaequipo;  
+            NombreEquipo = nombre;
         }
 
 

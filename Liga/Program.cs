@@ -8,6 +8,9 @@ namespace Liga
 {
     internal class Program
     {
+        static Equipo Equipo1 = new Equipo();
+        static Jugador Jugador = new Jugador();
+
         static void Main(string[] args)
         {
             GestionFutbol();
@@ -19,14 +22,12 @@ namespace Liga
             bool salir = false;
             do
             {
-                Console.Clear();
                 Console.WriteLine("Ejercicio Gestión club de fútbol");
                 Console.WriteLine("================================");
                 Console.WriteLine("1. Dar de alta un club");
                 Console.WriteLine("2. Dar de alta un equipo");
                 Console.WriteLine("3. Dar de alta un jugador");
-
-
+                Console.WriteLine("4. Meter el jugador en un equipo");
 
                 Console.Write("Elige una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
@@ -42,6 +43,9 @@ namespace Liga
                     case 3:
                         AltaJugador();
                         break;
+                    case 4:
+                        MeterJugador();
+                        break;
                     default:
                         salir = true;
                         break;
@@ -56,14 +60,24 @@ namespace Liga
 
         }
 
-        static void AltaEquipo() 
+        static void AltaEquipo()
         {
-        
+            Equipo1.NombreEquipo = "Manolo";
         }
 
         static void AltaJugador()
         {
+            Jugador.Alta();
+            Jugador.Muestra();
+        }
 
+        static void MeterJugador()
+        {
+            Equipo1.AñadirJugador(Equipo1, Jugador);
+            for (int i = 0; i < Equipo1.ListaJugadores.Count; i++)
+            {
+                Equipo1.ListaJugadores[i].Muestra();
+            }
         }
     }
 }

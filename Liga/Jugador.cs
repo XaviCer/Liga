@@ -45,7 +45,7 @@ namespace Liga
             Apellido2 = Console.ReadLine();
 
             Console.Write("Edad: ");
-            Edad = int.Parse(Console.ReadLine());
+            int.TryParse(Console.ReadLine(),out int Edad);
 
             Console.Write("Sexo (H/M): ");
             Sexo = char.Parse(Console.ReadLine());
