@@ -6,11 +6,5 @@ using System.Threading.Tasks;
 
 namespace Liga
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            //empieza
-        }
-    }
+   
 }
