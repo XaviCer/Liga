@@ -8,9 +8,9 @@ using static Liga.Equipo;
 namespace Liga
 {
 
-    public class Equipo
+    internal class Equipo
     {
-    //    public ListaJugadores<Jugador> = new List<Jugador>();
+        public List<Jugador> ListaJugadores = new List<Jugador>();
        
         public enum Categoria   
         {
@@ -18,18 +18,43 @@ namespace Liga
             masculino2,
             femenino1
         };
+         
+        public Categoria categoriaEquipo { get; set; }
 
-    //    Categoria CategoriaEquipo = new Categoria();
+        public string nombreEquipo { get; set; }
+        public Equipo()
+        {
+        }
 
-     //   string Nombre = "";
-    //}
+        public Equipo(Categoria categoriaequipo, string nombre)
+        {
+            categoriaEquipo = categoriaequipo;  
+            nombreEquipo = nombre;
+        }
 
-   // public Categoria CategoriaEquipo { get; set; }
 
-    //public string Nombre { get; set; }
 
-    //public Equipo()
-    
+        //Quitar y poner jugadores para fichajes
+        public Equipo QuitarJugador(Equipo equipo, string nombre, string apellido1, string apellido2)
+        {
+
+            for (int i = 0; i < equipo.ListaJugadores.Count; i++ )
+            {
+                if (equipo.ListaJugadores[i].Nombre.ToUpper() == nombre.ToUpper() & equipo.ListaJugadores[i].Apellido1.ToUpper() == apellido1.ToUpper() & equipo.ListaJugadores[i].Apellido2.ToUpper() == apellido2.ToUpper())
+                    equipo.ListaJugadores.RemoveAt(i);
+            }
+            return equipo;
+        }
+
+        public Equipo AñadirJugador(Equipo equipo, Jugador jugador)
+        {
+
+            equipo.ListaJugadores.Add(jugador);
+            return equipo;
+        }
+
+
+
     }
 
     

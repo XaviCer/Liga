@@ -26,6 +26,8 @@ namespace Liga
                 Console.WriteLine("2. Dar de alta un equipo");
                 Console.WriteLine("3. Dar de alta un jugador");
 
+
+
                 Console.Write("Elige una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
 
