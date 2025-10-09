@@ -10,7 +10,11 @@ namespace Liga
     {
         static void Main(string[] args)
         {
-            //empieza
+            //Creamos un jugador de prueba
+
+            Jugador j1 = new Jugador();
+            j1.Relle
+
         }
     }
 }
