@@ -32,8 +32,9 @@ namespace Liga
         }
         public void Alta()
         {
+            // Pantalla para realizar la entrada de datos de un jugador
             Console.Clear();
-            Console.WriteLine("### Alta de un jugador ###");
+            Console.WriteLine("### Introduce los datos de un jugador ###");
             Console.WriteLine();
 
             Console.Write("Nombre: ");
@@ -51,12 +52,10 @@ namespace Liga
 
             Console.Write("Precio: ");
             Precio = int.Parse(Console.ReadLine());
-
-
         }
         public void Muestra()
         {
-       
+            //Mostramos en pantalla la ficha del jugador
             Console.WriteLine("### Datos del jugador ###");
             Console.WriteLine();
 
@@ -68,12 +67,6 @@ namespace Liga
             Console.WriteLine("Precio: " + Precio);
 
             Console.ReadKey();
-
-           
-
         }
-
-
-
     }
 }
