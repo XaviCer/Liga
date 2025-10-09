@@ -6,5 +6,15 @@ using System.Threading.Tasks;
 
 namespace Liga
 {
-   
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Creamos un jugador de prueba
+
+            Jugador j1 = new Jugador();
+            j1.Relle
+
+        }
+    }
 }
