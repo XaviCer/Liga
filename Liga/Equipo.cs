@@ -12,12 +12,12 @@ namespace Liga
     {
     //    public ListaJugadores<Jugador> = new List<Jugador>();
        
-    //    public enum Categoria
-    //    {
-    //        masculino 1,
-    //        masculino 2,
-     //       femenino 1
-    //    };
+        public enum Categoria   
+        {
+            masculino1,
+            masculino2,
+            femenino1
+        };
 
     //    Categoria CategoriaEquipo = new Categoria();
 
