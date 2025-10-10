@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,11 @@ namespace Liga
             bool salir = false;
             do
             {
+                Console.Clear();
                 Console.WriteLine("Ejercicio Gestión club de fútbol");
                 Console.WriteLine("================================");
                 Console.WriteLine("1. Cargar datos iniciales");
                 Console.WriteLine("2. ");
-                Console.WriteLine("3. ");
-                Console.WriteLine("4. ");
 
                 Console.Write("Elige una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
