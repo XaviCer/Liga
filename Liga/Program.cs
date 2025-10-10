@@ -9,6 +9,8 @@ namespace Liga
 {
     internal class Program
     {
+        static Club Club1 = new Club("Liga", 1899);
+
         static void Main(string[] args)
         {
             GestionFutbol();
@@ -32,9 +34,10 @@ namespace Liga
                 switch (opcion)
                 {
                     case 1:
-                        //CargaDatosIniciales();
-                        CargaInicJugadores();
-                        CargaInicJugadoras();
+                        CargaDatosIniciales();
+                        break;
+                    case 2:
+                        IntercambioJugadores();
                         break;
                     default:
                         salir = true;
@@ -47,27 +50,24 @@ namespace Liga
 
         static void CargaDatosIniciales()
         {
-            Club club1 = new Club("F.C.Barcelona", 1890);
+            // Se crea el club con una lista de equipos
+            Club1.Add(CargaInicEquipos());
 
-            Equipo equipo1 = new Equipo(Equipo.Categoria.masculino1,"Primer equipo");
+            // A los dos primeros equipos Masculinos se les añade 10 jugadores a cada uno
+            Jugador[] jugadores = CargaInicJugadores();
+            for (int i = 0; i < 10; i++)
+                Club1.Equipos[0].AñadirJugador(jugadores[i]);
+            for (int i = 10; i < jugadores.Length; i++)
+                Club1.Equipos[1].AñadirJugador(jugadores[i]);
 
-            equipo1.AñadirJugador(new Jugador("Lamine", "bbbbb", "ccccc", 'h', 30, 1000));
-            equipo1.AñadirJugador(new Jugador("Xavi", "bbbbb", "ccccc", 'h', 30, 1000));
-            equipo1.AñadirJugador(new Jugador("Jordi", "bbbbb", "ccccc", 'h', 30, 1000));
-            equipo1.AñadirJugador(new Jugador("Iban", "bbbbb", "ccccc", 'h', 30, 1000));
-            equipo1.AñadirJugador(new Jugador("Julian", "bbbbb", "ccccc", 'h', 30, 1000));
-
-            Console.WriteLine("Club: " + club1.Nombre);
-            Console.WriteLine("Equipo: " + equipo1.NombreEquipo);
-            for (int i = 0; i < equipo1.ListaJugadores.Count; i++)
-            {
-                equipo1.ListaJugadores[i].Muestra();
-            }
+            Console.WriteLine("Hecho! Se ha creado un club con varios equipos y los dos primeros con 10 jugadores cada uno");
+            Console.ReadKey();
         }
+
         static Equipo[] CargaInicEquipos()
         {
-            Equipo[] eq = new Equipo[20]; 
-            
+            Equipo[] eq = new Equipo[20];
+
             eq[0] = new Equipo(Equipo.Categoria.masculino1, "Barça");
             eq[1] = new Equipo(Equipo.Categoria.masculino1, "Real Madrid");
             eq[2] = new Equipo(Equipo.Categoria.masculino1, "Espanyol");
@@ -125,9 +125,8 @@ namespace Liga
         static Jugador[] CargaInicJugadores()
         {
             Jugador[] jug = new Jugador[20];
-            
+
             //public Jugador(string nombre, string apellido1, string apellido2, char sexo, int edad, int precio)
-            
             jug[0] = new Jugador("Manuel", "López", "Carrasco", 'H', 18, 0);
             jug[1] = new Jugador("Antonio", "De la Cruz", "Vázquez", 'H', 21, 0);
             jug[2] = new Jugador("Carlos", "Martínez", "Gómez", 'H', 20, 0);
@@ -149,10 +148,10 @@ namespace Liga
             jug[18] = new Jugador("Óscar", "Lara", "Aguilar", 'H', 23, 0);
             jug[19] = new Jugador("Hugo", "Serrano", "Bravo", 'H', 20, 0);
 
-            for (int i = 0; i < 20; i++)
-                jug[i].Muestra();
+            //for (int i = 0; i < 20; i++)
+            //    jug[i].Muestra();
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             return jug;
         }
@@ -162,7 +161,6 @@ namespace Liga
             Jugador[] jug = new Jugador[20];
 
             // public Jugador(String nombre, String apellido1, String apellido2, char sexo, int edad, int precio)
-
             jug[0] = new Jugador("Laura", "Martínez", "Ruiz", 'M', 19, 0);
             jug[1] = new Jugador("Marta", "Fernández", "Santos", 'M', 22, 0);
             jug[2] = new Jugador("Sara", "Gómez", "López", 'M', 20, 0);
@@ -184,15 +182,70 @@ namespace Liga
             jug[18] = new Jugador("Julia", "Vázquez", "Molina", 'M', 19, 0);
             jug[19] = new Jugador("Silvia", "De la Cruz", "Ramírez", 'M', 21, 0);
 
-            for (int i = 0; i < 20; i++)
-                jug[i].Muestra();
+            //for (int i = 0; i < 20; i++)
+            //    jug[i].Muestra();
 
-            Console.ReadKey();
-
+            //Console.ReadKey();
 
             return jug;
         }
 
+        static void IntercambioJugadores()
+        {
+            int jugador1 = 0, jugador2 = 0;
 
+            Console.Clear();
+            Console.WriteLine("Lista de jugadores del equipo 1 del Club");
+            Club1.Equipos[0].ListarNombreJugadores(); ;
+            Console.WriteLine("");
+
+            Console.WriteLine("Lista de jugadores del equipo 2 del Club");
+            Club1.Equipos[1].ListarNombreJugadores();
+            Console.WriteLine("");
+
+            do
+            {
+                if (jugador1 == 0)
+                {
+                    Console.Write("Elige jugador del equipo1 (1-10): ");
+                    int.TryParse(Console.ReadLine(), out jugador1);
+                }
+                if(!(jugador1 >=1 && jugador1 <= 10))
+                {
+                    jugador1 = 0;
+                    Console.WriteLine("Número de jugador incorrecto.");
+                }
+            }
+            while (jugador1 == 0);
+            do
+            {
+                if (jugador2 == 0)
+                {
+                    Console.Write("Elige jugador del equipo2: ");
+                    int.TryParse(Console.ReadLine(), out jugador2);
+                }
+                if (!(jugador2 >= 1 && jugador2 <= 10))
+                {
+                    jugador2 = 0;
+                    Console.WriteLine("Número de jugador incorrecto.");
+                }
+            }
+            while (jugador2 == 0);
+
+            Club1.Equipos[1].AñadirJugador(Club1.Equipos[0].QuitarJugador(jugador1-1));
+            Club1.Equipos[0].AñadirJugador(Club1.Equipos[1].QuitarJugador(jugador2-1));
+
+            Console.Clear();
+            Console.WriteLine("Intercambio realizado con exito\n");
+            Console.WriteLine("Lista de jugadores del equipo 1 del Club");
+            Club1.Equipos[0].ListarNombreJugadores();
+            Console.WriteLine("");
+
+            Console.WriteLine("Lista de jugadores del equipo 2 del Club");
+            Club1.Equipos[1].ListarNombreJugadores();
+            Console.WriteLine("");
+
+            Console.ReadKey();
+        }
     }
 }
