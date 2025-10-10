@@ -24,7 +24,7 @@ namespace Liga
                 Console.WriteLine("Ejercicio Gestión club de fútbol");
                 Console.WriteLine("================================");
                 Console.WriteLine("1. Cargar datos iniciales");
-                Console.WriteLine("2. ");
+                Console.WriteLine("2. Intercambiar jugadores");
 
                 Console.Write("Elige una opción: ");
                 int.TryParse(Console.ReadLine(), out opcion);
